@@ -1,0 +1,1400 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Astrica Fitness HQ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+<style>
+/* ── TOKENS ──────────────────────────────────────── */
+:root {
+  --bg:       #EEE8FF;
+  --surf:     #FFFFFF;
+  --s2:       #EAE2FF;
+  --s3:       #DDD3FF;
+  --bdr:      #C3AFFE;
+  --bdr-l:    #DDD3FF;
+  --ac:       #6D28D9;
+  --ac-l:     #8B5CF6;
+  --ac2:      #C026D3;
+  --glow:     rgba(109,40,217,.12);
+  --ink:      #1A0840;
+  --ink2:     #3D1A78;
+  --muted:    #7B6AA0;
+  --ok:       #059669;
+  --ok-bg:    #ECFDF5;
+  --gold:     #D97706;
+  --gold-bg:  #FFFBEB;
+  --fd: 'Nunito', system-ui, sans-serif;
+  --fb: 'DM Sans', system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:      #1C0838;
+    --surf:    #2A1255;
+    --s2:      #341768;
+    --s3:      #3D1C7A;
+    --bdr:     #5B2EAA;
+    --bdr-l:   #452480;
+    --ac:      #A78BFA;
+    --ac-l:    #C4B5FD;
+    --ac2:     #E879F9;
+    --glow:    rgba(167,139,250,.18);
+    --ink:     #EDE9FE;
+    --ink2:    #C4B5FD;
+    --muted:   #9B8BC0;
+    --ok:      #34D399;
+    --ok-bg:   rgba(52,211,153,.12);
+    --gold:    #FBBF24;
+    --gold-bg: rgba(251,191,36,.12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:      #1C0838;
+  --surf:    #2A1255;
+  --s2:      #341768;
+  --s3:      #3D1C7A;
+  --bdr:     #5B2EAA;
+  --bdr-l:   #452480;
+  --ac:      #A78BFA;
+  --ac-l:    #C4B5FD;
+  --ac2:     #E879F9;
+  --glow:    rgba(167,139,250,.18);
+  --ink:     #EDE9FE;
+  --ink2:    #C4B5FD;
+  --muted:   #9B8BC0;
+  --ok:      #34D399;
+  --ok-bg:   rgba(52,211,153,.12);
+  --gold:    #FBBF24;
+  --gold-bg: rgba(251,191,36,.12);
+  color-scheme: dark;
+}
+
+/* ── RESET + BASE ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--fb);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100%;
+  padding-block: 16px 72px;
+  padding-left:  max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* ── LAYOUT ───────────────────────────────────────── */
+.wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.card {
+  background: var(--surf);
+  border: 1.5px solid var(--bdr);
+  border-radius: 20px;
+  padding: 18px 20px;
+}
+
+/* ── TYPOGRAPHY UTILS ─────────────────────────────── */
+.f-display { font-family: var(--fd); }
+.sec-label {
+  font-family: var(--fd);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  margin-bottom: 12px;
+}
+
+/* ── HEADER ───────────────────────────────────────── */
+.hdr { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.hdr-name {
+  font-family: var(--fd);
+  font-size: 26px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--ac), var(--ac2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+.hdr-sub { font-size: 12px; color: var(--muted); font-weight: 500; margin-top: 2px; }
+.clock-block { text-align: right; }
+.clock-time {
+  font-family: var(--fd);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink2);
+  display: block;
+  line-height: 1.1;
+}
+.clock-label { font-size: 11px; color: var(--muted); font-weight: 600; }
+.theme-btn {
+  background: var(--s2);
+  border: 1.5px solid var(--bdr);
+  border-radius: 10px;
+  padding: 5px 9px;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+  color: var(--ink);
+  transition: background .15s;
+  margin-top: 2px;
+}
+.theme-btn:hover { background: var(--s3); }
+
+/* ── XP BAR ───────────────────────────────────────── */
+.xp-row { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+.rank-pill {
+  font-family: var(--fd);
+  font-size: 11px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--ac), var(--ac2));
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.xp-track {
+  flex: 1;
+  background: var(--s2);
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+  border: 1px solid var(--bdr-l);
+}
+.xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ac-l), var(--ac2));
+  border-radius: 999px;
+  transition: width .7s cubic-bezier(.34,1.56,.64,1);
+  min-width: 4px;
+}
+.xp-num {
+  font-family: var(--fd);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.next-rank { font-size: 11px; color: var(--muted); text-align: right; margin-top: 3px; }
+
+/* ── TODAY CARD ───────────────────────────────────── */
+.today-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.today-date {
+  font-family: var(--fd);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.today-week { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.early-note { font-size: 12px; color: var(--gold); font-weight: 600; margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chip {
+  background: var(--s2);
+  border: 1px solid var(--bdr-l);
+  border-radius: 999px;
+  padding: 4px 11px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink2);
+}
+.chip.done { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+.chill-note { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+/* ── PROGRESS RING ────────────────────────────────── */
+.ring-wrap { position: relative; display: inline-flex; flex-shrink: 0; }
+.ring { transform: rotate(-90deg); }
+.ring-pct {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--fd); font-size: 13px; font-weight: 800; color: var(--ac);
+}
+
+/* ── DAILIES ──────────────────────────────────────── */
+.habit-row {
+  display: grid;
+  grid-template-columns: 26px 28px 1fr auto;
+  align-items: start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--bdr-l);
+}
+.habit-row:last-child { border-bottom: none; }
+.h-num {
+  font-family: var(--fd);
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--bdr);
+  text-align: center;
+  padding-top: 2px;
+}
+.h-icon { font-size: 22px; text-align: center; line-height: 1.2; }
+.h-info { min-width: 0; }
+.h-name { font-family: var(--fd); font-size: 15px; font-weight: 700; color: var(--ink); }
+.h-desc { font-size: 12px; color: var(--muted); }
+.h-xp {
+  font-family: var(--fd);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--gold);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+/* ── INPUTS ───────────────────────────────────────── */
+.input-row { display: flex; align-items: center; gap: 7px; margin-top: 7px; flex-wrap: wrap; }
+.num-input {
+  font-family: var(--fd);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  background: var(--s2);
+  border: 1.5px solid var(--bdr);
+  border-radius: 11px;
+  padding: 5px 10px;
+  width: 90px;
+  outline: none;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.num-input::-webkit-inner-spin-button,
+.num-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+.num-input:focus { border-color: var(--ac); }
+.unit-label { font-size: 12px; color: var(--muted); font-weight: 600; }
+
+/* Sleep stepper */
+.stepper { display: flex; align-items: center; background: var(--s2); border: 1.5px solid var(--bdr); border-radius: 11px; overflow: hidden; }
+.step-btn {
+  background: none; border: none; cursor: pointer;
+  width: 32px; height: 36px;
+  font-size: 18px; font-weight: 700; color: var(--ac);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .12s;
+}
+.step-btn:hover { background: var(--s3); }
+.step-val {
+  font-family: var(--fd);
+  font-size: 17px; font-weight: 800; color: var(--ink);
+  min-width: 48px; text-align: center;
+  border: none; background: none; outline: none;
+}
+
+/* ── BUTTONS ──────────────────────────────────────── */
+.btn {
+  padding: 7px 15px;
+  border-radius: 11px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--fb);
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity .12s, transform .1s;
+  white-space: nowrap;
+}
+.btn:active { transform: scale(.96); }
+.btn-ac { background: var(--ac); color: #fff; }
+.btn-ac:hover { opacity: .88; }
+.btn-ghost { background: var(--s2); color: var(--ink2); border: 1.5px solid var(--bdr); }
+.btn-ghost:hover { background: var(--s3); }
+.btn-ok { background: var(--ok-bg); color: var(--ok); border: 1.5px solid var(--ok); }
+.btn-sm { padding: 5px 11px; font-size: 12px; border-radius: 9px; }
+.btn-warn { background: var(--gold-bg); color: var(--gold); border: 1.5px solid var(--gold); }
+
+/* ── CHECKBOX ─────────────────────────────────────── */
+.check-box {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px; height: 24px;
+  border-radius: 8px;
+  border: 2px solid var(--bdr);
+  background: var(--s2);
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: all .18s;
+}
+.check-box:checked { background: var(--ac); border-color: var(--ac); }
+.check-box:checked::after {
+  content: '✓';
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 14px; font-weight: 900;
+}
+.check-row { display: flex; align-items: center; gap: 9px; margin-top: 7px; }
+.check-label { font-size: 13px; color: var(--muted); cursor: pointer; }
+
+/* ── DONE STATE (daily) ───────────────────────────── */
+.done-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 6px;
+  font-size: 12px; font-weight: 700; color: var(--ok);
+}
+.tier-badge {
+  font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 3px;
+}
+.tier-ok  { background: var(--ok-bg); color: var(--ok); }
+.tier-gold{ background: var(--gold-bg); color: var(--gold); }
+.tier-dim { background: var(--s2); color: var(--muted); }
+
+/* ── WEEKLIES ─────────────────────────────────────── */
+.weekly-item {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--bdr-l);
+}
+.weekly-item:last-child { border-bottom: none; }
+.weekly-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.weekly-left { display: flex; align-items: center; gap: 8px; }
+.weekly-icon { font-size: 20px; }
+.weekly-name { font-family: var(--fd); font-size: 14px; font-weight: 700; color: var(--ink); }
+.weekly-right { display: flex; align-items: center; gap: 8px; }
+.weekly-count { font-family: var(--fd); font-size: 13px; font-weight: 800; color: var(--ink2); }
+.bar-wrap { background: var(--s2); border-radius: 999px; height: 7px; overflow: hidden; border: 1px solid var(--bdr-l); }
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ac-l), var(--ac2));
+  border-radius: 999px;
+  transition: width .5s ease;
+}
+.log-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+.log-pill {
+  font-size: 11px; font-weight: 600;
+  background: var(--s2); border: 1px solid var(--bdr-l);
+  border-radius: 999px; padding: 2px 8px;
+  color: var(--muted);
+  display: flex; align-items: center; gap: 3px;
+  cursor: default;
+}
+.log-del { cursor: pointer; color: var(--ac2); font-size: 14px; line-height: 1; }
+.log-del:hover { opacity: .7; }
+
+/* ── BONUS BANNER ─────────────────────────────────── */
+.bonus-banner {
+  margin-top: 10px; padding: 10px 12px;
+  background: var(--gold-bg); border: 1.5px solid var(--gold);
+  border-radius: 12px; font-size: 13px; font-weight: 700; color: var(--gold);
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ── LUCY CARD ────────────────────────────────────── */
+.lucy-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px; background: var(--s2);
+  border: 1.5px solid var(--bdr-l); border-radius: 16px;
+  cursor: pointer; transition: background .15s;
+  user-select: none;
+}
+.lucy-card:hover:not(.done) { background: var(--s3); }
+.lucy-card.done { border-color: var(--ok); background: var(--ok-bg); cursor: default; }
+.lucy-emoji { font-size: 38px; flex-shrink: 0; }
+.lucy-info { flex: 1; min-width: 0; }
+.lucy-title { font-family: var(--fd); font-size: 16px; font-weight: 800; color: var(--ink); }
+.lucy-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.lucy-xp { font-family: var(--fd); font-size: 20px; font-weight: 900; color: var(--gold); flex-shrink: 0; }
+
+/* ── HISTORY STRIP ────────────────────────────────── */
+.history-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.hist-col { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.hist-bar-wrap {
+  width: 100%; height: 40px;
+  background: var(--s2); border-radius: 6px; overflow: hidden;
+  border: 1px solid var(--bdr-l);
+  display: flex; align-items: flex-end;
+}
+.hist-col.today .hist-bar-wrap { border-color: var(--ac); }
+.hist-bar {
+  width: 100%;
+  background: linear-gradient(0deg, var(--ac), var(--ac2));
+  border-radius: 4px 4px 0 0;
+  min-height: 0;
+  transition: height .4s ease;
+}
+.hist-day-label { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.hist-xp { font-size: 10px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ── TOAST ────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 76px; left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  opacity: 0; pointer-events: none;
+  background: linear-gradient(135deg, var(--ac), var(--ac2));
+  color: #fff; padding: 8px 20px;
+  border-radius: 999px;
+  font-family: var(--fd); font-size: 14px; font-weight: 800;
+  z-index: 300; white-space: nowrap;
+  transition: opacity .25s, transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── FAB ──────────────────────────────────────────── */
+.fab {
+  position: fixed;
+  bottom: max(20px, env(safe-area-inset-bottom, 0px));
+  right: max(20px, env(safe-area-inset-right, 0px));
+  width: 50px; height: 50px;
+  border-radius: 50%; border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--ac), var(--ac2));
+  color: #fff; font-size: 21px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px var(--glow);
+  transition: transform .18s; z-index: 100;
+}
+.fab:hover { transform: scale(1.08); }
+.fab:active { transform: scale(.93); }
+
+/* ── MODAL ────────────────────────────────────────── */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.5);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex; align-items: flex-end;
+  padding-bottom: max(0px, env(safe-area-inset-bottom, 0px));
+}
+@media (min-width: 600px) { .overlay { align-items: center; } }
+.modal {
+  background: var(--surf);
+  border-radius: 24px 24px 0 0;
+  padding: 24px;
+  padding-left:  max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+  width: 100%; max-height: 88vh; overflow-y: auto;
+  border-top: 1.5px solid var(--bdr);
+}
+@media (min-width: 600px) {
+  .modal { border-radius: 24px; max-width: 520px; max-height: 80vh; }
+}
+.modal-title { font-family: var(--fd); font-size: 22px; font-weight: 900; color: var(--ac); margin-bottom: 18px; }
+
+/* ── SCHED GRID ───────────────────────────────────── */
+.sched-grid { display: grid; grid-template-columns: 46px repeat(4,1fr); gap: 6px; align-items: center; margin-bottom: 3px; }
+.sched-day { font-family: var(--fd); font-size: 13px; font-weight: 700; color: var(--ink); }
+.sched-head { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; text-align: center; }
+.sched-check {
+  -webkit-appearance: none; appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 6px; border: 2px solid var(--bdr); background: var(--s2);
+  cursor: pointer; position: relative; margin: 0 auto; display: block;
+  transition: all .15s;
+}
+.sched-check:checked { background: var(--ac); border-color: var(--ac); }
+.sched-check:checked::after {
+  content: '✓'; position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 12px; font-weight: 900;
+}
+
+/* ── DATA SECTION (settings) ─────────────────────── */
+.data-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.export-area {
+  width: 100%; height: 160px;
+  font-size: 11px; font-family: monospace;
+  background: var(--s2); border: 1.5px solid var(--bdr);
+  border-radius: 11px; padding: 10px;
+  color: var(--ink); outline: none; resize: none;
+  margin-top: 10px;
+}
+.divider { height: 1px; background: var(--bdr-l); margin: 16px 0; }
+
+/* ── MOTION REDUCTION ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .xp-fill, .bar-fill, .hist-bar, .toast { transition: none; }
+}
+</style>
+
+<!-- ═══════════════════════════════════════════════ -->
+<div class="wrap" id="app"></div>
+<div class="toast" id="toast"></div>
+<button class="fab" id="fab" title="Settings">⚙️</button>
+<div id="modal"></div>
+
+<script>
+/* ════════════════════════════════════════════
+   CONSTANTS
+════════════════════════════════════════════ */
+const TZ = 'America/Chicago';
+const DAYS  = ['sun','mon','tue','wed','thu','fri','sat'];
+const DSHORT= ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const DLONG = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const MONS  = ['January','February','March','April','May','June',
+               'July','August','September','October','November','December'];
+
+const XP = {
+  sleep6:10, sleep7:20, steps5k:10, steps7k:20,
+  calories:10, ontime:15, earlyBird:10,
+  walkie:15, stream:25, cook:20, clean:20,
+  lucy:50, weekBonus:40,
+};
+
+const RANKS = [
+  { min:0,    name:'Couch Cryptid',     emoji:'🛋️' },
+  { min:100,  name:'Goblin Mode',        emoji:'👾' },
+  { min:280,  name:'Chaos Gremlin',      emoji:'🌀' },
+  { min:550,  name:'Feral Champion',     emoji:'⚡' },
+  { min:1000, name:'Astricalex Rising',  emoji:'🌸' },
+  { min:2000, name:'Apex Astricalex',    emoji:'👑' },
+];
+
+const META = {
+  walkies:{ icon:'🥾', label:'Walkies',  goal:3, key:'walkies', xp: XP.walkie },
+  stream: { icon:'📺', label:'Stream',   goal:2, key:'stream',  xp: XP.stream  },
+  cook:   { icon:'🍳', label:'Cook',     goal:1, key:'cook',    xp: XP.cook    },
+  clean:  { icon:'🧹', label:'Clean',    goal:1, key:'clean',   xp: XP.clean   },
+};
+
+const DEFAULT_SCHED = {
+  mon:{ walkies:true,  cook:true,  stream:false, clean:false },
+  tue:{ walkies:true,  cook:false, stream:false, clean:false },
+  wed:{ walkies:false, cook:false, stream:true,  clean:true  },
+  thu:{ walkies:true,  cook:false, stream:true,  clean:false },
+  fri:{ walkies:false, cook:false, stream:false, clean:true  },
+  sat:{ walkies:false, cook:false, stream:false, clean:true  },
+  sun:{ walkies:false, cook:false, stream:false, clean:false },
+};
+
+/* ════════════════════════════════════════════
+   STORAGE
+════════════════════════════════════════════ */
+const S = {
+  get(k)   { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+  set(k,v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+  dk: d  => `ax_d_${d}`,
+  wk: d  => `ax_w_${d}`,
+  mk: d  => `ax_m_${d}`,
+};
+
+/* ════════════════════════════════════════════
+   GITHUB SYNC
+════════════════════════════════════════════ */
+const GH = {
+  token:      () => localStorage.getItem('ax_gh_token') || '',
+  repo:       () => localStorage.getItem('ax_gh_repo')  || '',
+  path:       () => localStorage.getItem('ax_gh_path')  || 'data/alex-fitness.json',
+  configured: () => !!(localStorage.getItem('ax_gh_token') && localStorage.getItem('ax_gh_repo')),
+};
+
+function allAxData() {
+  const d = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith('ax_') && !k.startsWith('ax_gh_')) {
+      try { d[k] = JSON.parse(localStorage.getItem(k)); } catch {}
+    }
+  }
+  return d;
+}
+
+function toB64(s) {
+  try { return btoa(unescape(encodeURIComponent(s))); } catch { return btoa(s); }
+}
+function fromB64(b64) {
+  try { return decodeURIComponent(escape(atob(b64.replace(/\n/g, '')))); } catch { return atob(b64.replace(/\n/g, '')); }
+}
+
+async function ghAPI(method, body) {
+  return fetch(`https://api.github.com/repos/${GH.repo()}/contents/${GH.path()}`, {
+    method,
+    headers: {
+      Authorization: `token ${GH.token()}`,
+      Accept: 'application/vnd.github.v3+json',
+      ...(method === 'PUT' ? { 'Content-Type': 'application/json' } : {}),
+    },
+    ...(body ? { body: JSON.stringify(body) } : {}),
+  });
+}
+
+async function syncToGH() {
+  if (!GH.configured()) return;
+  syncStatus = 'syncing'; updateSyncDot();
+  try {
+    let sha;
+    const get = await ghAPI('GET');
+    if (get.ok) { sha = (await get.json()).sha; }
+    else if (get.status !== 404) { syncStatus = 'error'; updateSyncDot(); return; }
+    const put = await ghAPI('PUT', {
+      message: `fitness sync ${new Date().toISOString().slice(0, 10)}`,
+      content: toB64(JSON.stringify(allAxData(), null, 2)),
+      ...(sha ? { sha } : {}),
+    });
+    syncStatus = put.ok ? 'ok' : 'error';
+  } catch { syncStatus = 'error'; }
+  updateSyncDot();
+}
+
+async function loadFromGH() {
+  if (!GH.configured()) return false;
+  try {
+    const r = await ghAPI('GET');
+    if (!r.ok) return false;
+    const j = await r.json();
+    const data = JSON.parse(fromB64(j.content));
+    Object.entries(data).forEach(([k, v]) => {
+      if (k.startsWith('ax_') && !k.startsWith('ax_gh_')) S.set(k, v);
+    });
+    return true;
+  } catch { return false; }
+}
+
+function scheduleSync() {
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(syncToGH, 4000);
+}
+
+function updateSyncDot() {
+  const el = document.getElementById('sync-dot');
+  if (!el) return;
+  const icons = { ok: '☁️', syncing: '↑', error: '⚠️', idle: '' };
+  const tips  = { ok: 'Synced to GitHub', syncing: 'Syncing…', error: 'Sync error — check settings', idle: 'GitHub sync not configured' };
+  el.textContent = icons[syncStatus] ?? '';
+  el.title = tips[syncStatus] ?? '';
+}
+
+/* ════════════════════════════════════════════
+   TIME
+════════════════════════════════════════════ */
+function nowCT() {
+  const now = new Date();
+  const pts = new Intl.DateTimeFormat('en-US', {
+    timeZone: TZ, year:'numeric', month:'2-digit', day:'2-digit',
+    hour:'2-digit', minute:'2-digit', second:'2-digit', hour12: false
+  }).formatToParts(now);
+  const p = {};
+  pts.forEach(x => p[x.type] = x.value);
+  const yr = parseInt(p.year), mo = parseInt(p.month)-1, dy = parseInt(p.day);
+  return {
+    year:yr, month:mo, day:dy,
+    hour: parseInt(p.hour) % 24, minute: parseInt(p.minute),
+    dateStr: `${p.year}-${p.month}-${p.day}`,
+    monthStr:`${p.year}-${p.month}`,
+    weekday: new Date(yr, mo, dy).getDay(),
+  };
+}
+
+function addDays(ds, n) {
+  const [y,m,d] = ds.split('-').map(Number);
+  const dt = new Date(y, m-1, d+n);
+  return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;
+}
+
+function mondayOf(ds) {
+  const [y,m,d] = ds.split('-').map(Number);
+  const dt = new Date(y, m-1, d);
+  const dow = dt.getDay();
+  const diff = dow === 0 ? -6 : 1 - dow;
+  const mon = new Date(y, m-1, d + diff);
+  return `${mon.getFullYear()}-${String(mon.getMonth()+1).padStart(2,'0')}-${String(mon.getDate()).padStart(2,'0')}`;
+}
+
+function fmt12(h, m) {
+  const ap = h >= 12 ? 'PM' : 'AM';
+  return `${h % 12 || 12}:${String(m).padStart(2,'0')} ${ap}`;
+}
+
+function shortDate(ds) {
+  const [y,mo,d] = ds.split('-').map(Number);
+  return DSHORT[new Date(y, mo-1, d).getDay()];
+}
+
+/* ════════════════════════════════════════════
+   STATE & DATA ACCESS
+════════════════════════════════════════════ */
+let CT   = nowCT();
+let SCHED = S.get('ax_sched') || DEFAULT_SCHED;
+let THEME = S.get('ax_theme') || 'auto';
+let sleepVal = 7, stepsVal = '', syncTimer = null, syncStatus = 'idle';
+
+function getDaily(ds) {
+  return S.get(S.dk(ds)) || { sleep:null, steps:null, calories:false, ontime:false, earlyBonus:false };
+}
+function saveDaily(ds, d) { S.set(S.dk(ds), d); }
+
+function getWeekly(ws) {
+  return S.get(S.wk(ws)) || { walkies:[], stream:[], cook:[], clean:[], bonusAwarded:false };
+}
+function saveWeekly(ws, w) { S.set(S.wk(ws), w); }
+
+function getMonthly(ms) {
+  return S.get(S.mk(ms)) || { lucy: null };
+}
+function saveMonthly(ms, m) { S.set(S.mk(ms), m); }
+
+function getTotalXP() { return S.get('ax_xp') || 0; }
+
+function addXP(amt, reason) {
+  const t = getTotalXP() + amt;
+  S.set('ax_xp', t);
+  const log = S.get('ax_log') || [];
+  log.unshift({ t: Date.now(), xp: amt, reason });
+  if (log.length > 300) log.length = 300;
+  S.set('ax_log', log);
+  showToast(`+${amt} XP — ${reason}`);
+  scheduleSync();
+}
+
+function subtractXP(amt) {
+  S.set('ax_xp', Math.max(0, getTotalXP() - amt));
+}
+
+function getRank(xp) {
+  let r = RANKS[0];
+  for (const rank of RANKS) { if (xp >= rank.min) r = rank; else break; }
+  return r;
+}
+
+function getNextRank(xp) {
+  for (const rank of RANKS) { if (rank.min > xp) return rank; }
+  return null;
+}
+
+function weeklyBoostDone(w) {
+  return w.walkies.length >= 3 && w.stream.length >= 2 && w.cook.length >= 1 && w.clean.length >= 1;
+}
+
+/* Day XP for history (from stored data) */
+function dayXP(ds) {
+  const d   = getDaily(ds);
+  const ws  = mondayOf(ds);
+  const w   = getWeekly(ws);
+  const mo  = ds.slice(0,7);
+  const mon = getMonthly(mo);
+  let xp = 0;
+  if (d.sleep)    xp += d.sleep.hours >= 7 ? XP.sleep7 : XP.sleep6;
+  if (d.steps)    xp += d.steps.count >= 7000 ? XP.steps7k : d.steps.count >= 5000 ? XP.steps5k : 0;
+  if (d.calories) xp += XP.calories;
+  if (d.ontime)   xp += XP.ontime;
+  if (d.earlyBonus) xp += XP.earlyBird;
+  for (const key of ['walkies','stream','cook','clean']) {
+    xp += (w[key]||[]).filter(l => l.date === ds).reduce((s,l) => s+l.xp, 0);
+  }
+  if (mon.lucy && mon.lucy.date === ds) xp += XP.lucy;
+  return xp;
+}
+
+/* ════════════════════════════════════════════
+   TOAST
+════════════════════════════════════════════ */
+let toastT = null;
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastT);
+  toastT = setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+/* ════════════════════════════════════════════
+   THEME
+════════════════════════════════════════════ */
+function applyTheme() {
+  const root = document.documentElement;
+  if (THEME === 'dark')  root.setAttribute('data-theme','dark');
+  else if (THEME === 'light') root.setAttribute('data-theme','light');
+  else root.removeAttribute('data-theme');
+}
+
+function toggleTheme() {
+  THEME = THEME === 'dark' ? 'light' : THEME === 'light' ? 'auto' : 'dark';
+  S.set('ax_theme', THEME);
+  applyTheme();
+  render();
+}
+
+function themeIcon() {
+  if (THEME === 'dark')  return '☀️';
+  if (THEME === 'light') return '🌙';
+  return '✨';
+}
+
+/* ════════════════════════════════════════════
+   RENDER
+════════════════════════════════════════════ */
+function render() {
+  CT = nowCT();
+  const { dateStr: ds, monthStr: ms, weekday: wd, hour, minute } = CT;
+  const ws = mondayOf(ds);
+
+  const daily   = getDaily(ds);
+  const weekly  = getWeekly(ws);
+  const monthly = getMonthly(ms);
+  const totalXP = getTotalXP();
+  const rank    = getRank(totalXP);
+  const next    = getNextRank(totalXP);
+  const sched   = SCHED[DAYS[wd]] || {};
+  const isEarly = hour < 9;
+
+  // XP bar
+  const rIdx   = RANKS.indexOf(rank);
+  const nRank  = RANKS[rIdx+1];
+  const xpPct  = nRank ? Math.min(100, ((totalXP - rank.min) / (nRank.min - rank.min)) * 100) : 100;
+
+  // Daily completion ring
+  const doneCount = [!!daily.sleep, !!daily.steps, daily.calories, daily.ontime].filter(Boolean).length;
+  const dPct = Math.round(doneCount / 4 * 100);
+  const rC = 20; const rCirc = 2 * Math.PI * rC;
+
+  // Expected chips
+  const chips = [];
+  if (sched.walkies) chips.push({ label:'🥾 Walkies', done: weekly.walkies.some(l=>l.date===ds) });
+  if (sched.stream)  chips.push({ label:'📺 Stream',  done: weekly.stream.some(l=>l.date===ds) });
+  if (sched.cook)    chips.push({ label:'🍳 Cook',    done: weekly.cook.some(l=>l.date===ds) });
+  if (sched.clean)   chips.push({ label:'🧹 Clean',   done: weekly.clean.some(l=>l.date===ds) });
+
+  // History (7 days ending today)
+  const hist = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = addDays(ds, -i);
+    hist.push({ d, label: DSHORT[new Date(...d.split('-').map((v,j)=>j===1?v-1:+v)).getDay()], isToday: d===ds, xp: dayXP(d) });
+  }
+  const maxXP = Math.max(...hist.map(h=>h.xp), 1);
+
+  // Bonus banner
+  const bonusReady = weeklyBoostDone(weekly);
+
+  document.getElementById('app').innerHTML = `
+  <!-- HEADER CARD -->
+  <div class="card">
+    <div class="hdr">
+      <div>
+        <div class="hdr-name f-display">astricalex ✨</div>
+        <div class="hdr-sub">Personal Fitness HQ</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;">
+        <div class="clock-block">
+          <span class="clock-time" id="ct">${fmt12(hour,minute)}</span>
+          <span class="clock-label">Central Time</span><span id="sync-dot" style="font-size:10px;margin-left:4px;cursor:default;" title="GitHub sync not configured"></span>
+        </div>
+        <button class="theme-btn" onclick="toggleTheme()" title="Cycle theme">${themeIcon()}</button>
+      </div>
+    </div>
+    <div class="xp-row">
+      <span class="rank-pill">${rank.emoji} ${rank.name}</span>
+      <div class="xp-track"><div class="xp-fill" style="width:${xpPct}%"></div></div>
+      <span class="xp-num">${totalXP.toLocaleString()} XP</span>
+    </div>
+    ${next ? `<div class="next-rank">${(next.min - totalXP).toLocaleString()} XP to ${next.emoji} ${next.name}</div>`
+           : `<div class="next-rank" style="color:var(--gold);">👑 Max rank — you are truly Apex!</div>`}
+  </div>
+
+  <!-- TODAY CARD -->
+  <div class="card">
+    <div class="today-row">
+      <div>
+        <div class="today-date">${DLONG[wd]}, ${MONS[CT.month]} ${CT.day}</div>
+        <div class="today-week">Week of ${ws.slice(5).replace('-','/')}</div>
+        ${isEarly && !daily.earlyBonus ? `<div class="early-note">⭐ Early bird bonus live — log something before 9am for +${XP.earlyBird} XP!</div>` : ''}
+        ${daily.earlyBonus ? `<div class="early-note">⭐ Early bird +${XP.earlyBird} XP claimed!</div>` : ''}
+      </div>
+      <div class="ring-wrap" title="${dPct}% done today">
+        <svg class="ring" width="52" height="52" viewBox="0 0 52 52">
+          <circle cx="26" cy="26" r="${rC}" fill="none" stroke="var(--s2)" stroke-width="5"/>
+          <circle cx="26" cy="26" r="${rC}" fill="none"
+            stroke="url(#rg)" stroke-width="5"
+            stroke-dasharray="${(dPct/100)*rCirc} ${rCirc}"
+            stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="rg" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="var(--ac-l)"/>
+              <stop offset="100%" stop-color="var(--ac2)"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="ring-pct">${dPct}%</div>
+      </div>
+    </div>
+    ${chips.length ? `
+    <div style="margin-top:10px;"><div class="sec-label" style="margin-bottom:6px;">📋 On the schedule</div>
+    <div class="chip-row">${chips.map(c=>`<span class="chip${c.done?' done':''}">${c.done?'✓ ':''}${c.label}</span>`).join('')}</div></div>`
+    : `<div class="chill-note">Nothing scheduled — rest up 🌙</div>`}
+  </div>
+
+  <!-- DAILIES -->
+  <div class="card">
+    <div class="sec-label">📅 Dailies</div>
+
+    <!-- 1. Sleep -->
+    <div class="habit-row">
+      <div class="h-num">1</div>
+      <div class="h-icon">💤</div>
+      <div class="h-info">
+        <div class="h-name">Sleep</div>
+        <div class="h-desc">Goal: 6 hrs minimum · 7+ hrs for max XP</div>
+        ${!daily.sleep ? `
+        <div class="input-row">
+          <div class="stepper">
+            <button class="step-btn" onclick="stepSleep(-1)">−</button>
+            <span class="step-val" id="sleepv">${sleepVal}</span>
+            <button class="step-btn" onclick="stepSleep(1)">+</button>
+          </div>
+          <span class="unit-label">hrs</span>
+          <button class="btn btn-ac btn-sm" onclick="logSleep()">Log</button>
+        </div>
+        ${isEarly ? `<div class="early-note" style="margin-top:4px;">⭐ +${XP.earlyBird} bonus right now</div>` : ''}` : `
+        <div class="done-badge">✓ ${daily.sleep.hours}h logged
+          <span class="tier-badge ${daily.sleep.hours>=7?'tier-gold':'tier-ok'}">${daily.sleep.hours>=7?'🌟 Well rested':'✓ Hit goal'}</span>
+          ${daily.earlyBonus ? '<span class="tier-badge tier-gold">⭐ Early bird</span>':''}
+        </div>`}
+      </div>
+      <div class="h-xp">${daily.sleep ? `+${daily.sleep.hours>=7?XP.sleep7:XP.sleep6}` : ''}</div>
+    </div>
+
+    <!-- 2. Steps -->
+    <div class="habit-row">
+      <div class="h-num">2</div>
+      <div class="h-icon">👟</div>
+      <div class="h-info">
+        <div class="h-name">Steps</div>
+        <div class="h-desc">5k = ${XP.steps5k} XP · 7k = ${XP.steps7k} XP</div>
+        ${!daily.steps ? `
+        <div class="input-row">
+          <input type="number" class="num-input" id="stepsv" min="0" max="99999" step="500"
+            placeholder="0" value="${stepsVal||''}"
+            oninput="stepsVal=this.value">
+          <span class="unit-label">steps</span>
+          <button class="btn btn-ac btn-sm" onclick="logSteps()">Log</button>
+        </div>` : `
+        <div class="done-badge">✓ ${daily.steps.count.toLocaleString()} steps
+          ${daily.steps.count>=7000 ? '<span class="tier-badge tier-gold">🌟 7k!</span>' :
+            daily.steps.count>=5000 ? '<span class="tier-badge tier-ok">✓ 5k</span>' :
+            '<span class="tier-badge tier-dim">Logged</span>'}
+        </div>`}
+      </div>
+      <div class="h-xp">${daily.steps ? `+${daily.steps.count>=7000?XP.steps7k:daily.steps.count>=5000?XP.steps5k:0}` : ''}</div>
+    </div>
+
+    <!-- 3. Calories -->
+    <div class="habit-row">
+      <div class="h-num">3</div>
+      <div class="h-icon">🥗</div>
+      <div class="h-info">
+        <div class="h-name">Calorie Count</div>
+        <div class="h-desc">Did you track what you ate today?</div>
+        <div class="check-row">
+          <input type="checkbox" class="check-box" id="calCb"
+            ${daily.calories ? 'checked' : ''}
+            onchange="if(this.checked&&!${daily.calories})logCalories()"
+            ${daily.calories ? 'disabled' : ''}>
+          <label class="check-label" for="calCb">${daily.calories ? '✓ Tracked!' : 'Mark as tracked'}</label>
+        </div>
+      </div>
+      <div class="h-xp">${daily.calories ? `+${XP.calories}` : ''}</div>
+    </div>
+
+    <!-- 4. On Time -->
+    <div class="habit-row">
+      <div class="h-num">4</div>
+      <div class="h-icon">⏰</div>
+      <div class="h-info">
+        <div class="h-name">Don't Be Late</div>
+        <div class="h-desc">No late arrivals today</div>
+        <div class="check-row">
+          <input type="checkbox" class="check-box" id="otCb"
+            ${daily.ontime ? 'checked' : ''}
+            onchange="if(this.checked&&!${daily.ontime})logOntime()"
+            ${daily.ontime ? 'disabled' : ''}>
+          <label class="check-label" for="otCb">${daily.ontime ? '✓ On time!' : 'Mark as on time'}</label>
+        </div>
+        ${isEarly && !daily.ontime ? `<div class="early-note" style="margin-top:4px;">⭐ Log before 9am for bonus</div>` : ''}
+      </div>
+      <div class="h-xp">${daily.ontime ? `+${XP.ontime}` : ''}</div>
+    </div>
+  </div>
+
+  <!-- WEEKLIES -->
+  <div class="card">
+    <div class="sec-label">📆 Weeklies</div>
+    ${Object.entries(META).map(([key, m]) => {
+      const logs = weekly[key] || [];
+      const pct  = Math.min(100, (logs.length / m.goal) * 100);
+      const done = logs.length >= m.goal;
+      return `
+      <div class="weekly-item">
+        <div class="weekly-top">
+          <div class="weekly-left">
+            <span class="weekly-icon">${m.icon}</span>
+            <span class="weekly-name">${m.label}</span>
+          </div>
+          <div class="weekly-right">
+            <span class="weekly-count">${logs.length}/${m.goal}</span>
+            ${done
+              ? `<span style="font-size:18px;">✅</span>`
+              : `<button class="btn btn-ac btn-sm" onclick="logWeekly('${key}')">+ Log it</button>`}
+          </div>
+        </div>
+        <div class="bar-wrap"><div class="bar-fill" style="width:${pct}%"></div></div>
+        ${logs.length ? `<div class="log-pills">${logs.map((l,i)=>`
+          <span class="log-pill">
+            ${shortDate(l.date)} #${i+1}
+            ${!done ? `<span class="log-del" onclick="removeWeekly('${key}',${i})" title="Remove">×</span>` : ''}
+          </span>`).join('')}</div>` : ''}
+      </div>`;
+    }).join('')}
+    ${bonusReady ? `
+    <div class="bonus-banner">
+      <span>🏆 All weeklies done! ${weekly.bonusAwarded ? `+${XP.weekBonus} XP claimed` : 'Claim bonus!'}</span>
+      ${!weekly.bonusAwarded ? `<button class="btn btn-sm" style="background:var(--gold);color:#fff;" onclick="claimBonus()">Claim +${XP.weekBonus} XP</button>` : ''}
+    </div>` : ''}
+  </div>
+
+  <!-- MONTHLY -->
+  <div class="card">
+    <div class="sec-label">🗓️ Monthly</div>
+    <div class="lucy-card${monthly.lucy ? ' done' : ''}" onclick="${monthly.lucy ? '' : 'logLucy()'}">
+      <div class="lucy-emoji">🐾</div>
+      <div class="lucy-info">
+        <div class="lucy-title">Lucy Check-In</div>
+        <div class="lucy-sub">${monthly.lucy
+          ? `Done ${monthly.lucy.date.slice(5).replace('-','/')} 🎉 You did it!`
+          : `Monthly special — tap to mark complete`}</div>
+      </div>
+      <div class="lucy-xp">${monthly.lucy ? '✓' : `+${XP.lucy}`}</div>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="card">
+    <div class="sec-label">📊 This Week</div>
+    <div class="history-grid">
+      ${hist.map(h => {
+        const barH = h.xp > 0 ? Math.max(4, Math.round((h.xp / maxXP) * 38)) : 0;
+        return `
+        <div class="hist-col${h.isToday ? ' today' : ''}">
+          <div class="hist-bar-wrap"><div class="hist-bar" style="height:${barH}px"></div></div>
+          <div class="hist-day-label">${h.label}</div>
+          <div class="hist-xp">${h.xp||0}</div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+/* ════════════════════════════════════════════
+   EARLY BIRD
+════════════════════════════════════════════ */
+function tryEarlyBird(daily, ds) {
+  if (CT.hour < 9 && !daily.earlyBonus) {
+    daily.earlyBonus = true;
+    addXP(XP.earlyBird, '⭐ Early bird!');
+  }
+}
+
+/* ════════════════════════════════════════════
+   DAILY ACTIONS
+════════════════════════════════════════════ */
+function stepSleep(d) {
+  sleepVal = Math.min(14, Math.max(0, (parseFloat(sleepVal)||7) + d * 0.5));
+  sleepVal = Math.round(sleepVal * 2) / 2;
+  const el = document.getElementById('sleepv');
+  if (el) el.textContent = sleepVal;
+}
+
+function logSleep() {
+  const v = parseFloat(document.getElementById('sleepv')?.textContent) || sleepVal;
+  if (!v || v <= 0) return;
+  const d = getDaily(CT.dateStr);
+  if (d.sleep) return;
+  tryEarlyBird(d, CT.dateStr);
+  d.sleep = { hours: v, loggedAt: Date.now() };
+  const xp = v >= 7 ? XP.sleep7 : v >= 6 ? XP.sleep6 : 0;
+  if (xp > 0) addXP(xp, `💤 Sleep ${v}h`);
+  else showToast('Sleep logged (under 6h)');
+  saveDaily(CT.dateStr, d);
+  render();
+}
+
+function logSteps() {
+  const el = document.getElementById('stepsv');
+  const count = parseInt(el?.value || stepsVal) || 0;
+  if (count <= 0) { showToast('Enter your step count first!'); return; }
+  const d = getDaily(CT.dateStr);
+  if (d.steps) return;
+  d.steps = { count, loggedAt: Date.now() };
+  const xp = count >= 7000 ? XP.steps7k : count >= 5000 ? XP.steps5k : 0;
+  if (xp > 0) addXP(xp, `👟 ${count.toLocaleString()} steps`);
+  else showToast(`${count.toLocaleString()} steps logged`);
+  stepsVal = '';
+  saveDaily(CT.dateStr, d);
+  render();
+}
+
+function logCalories() {
+  const d = getDaily(CT.dateStr);
+  if (d.calories) return;
+  tryEarlyBird(d, CT.dateStr);
+  d.calories = true;
+  addXP(XP.calories, '🥗 Calories tracked');
+  saveDaily(CT.dateStr, d);
+  render();
+}
+
+function logOntime() {
+  const d = getDaily(CT.dateStr);
+  if (d.ontime) return;
+  tryEarlyBird(d, CT.dateStr);
+  d.ontime = true;
+  addXP(XP.ontime, '⏰ On time!');
+  saveDaily(CT.dateStr, d);
+  render();
+}
+
+/* ════════════════════════════════════════════
+   WEEKLY ACTIONS
+════════════════════════════════════════════ */
+function logWeekly(key) {
+  const ws = mondayOf(CT.dateStr);
+  const w  = getWeekly(ws);
+  const m  = META[key];
+  if ((w[key]||[]).length >= m.goal) { showToast('Goal already met this week! 🎉'); return; }
+  if (!w[key]) w[key] = [];
+  w[key].push({ date: CT.dateStr, loggedAt: Date.now(), xp: m.xp });
+  addXP(m.xp, `${m.icon} ${m.label}`);
+  saveWeekly(ws, w);
+  render();
+}
+
+function removeWeekly(key, idx) {
+  const ws = mondayOf(CT.dateStr);
+  const w  = getWeekly(ws);
+  const entry = (w[key]||[])[idx];
+  if (!entry) return;
+  subtractXP(entry.xp);
+  w[key].splice(idx, 1);
+  saveWeekly(ws, w);
+  showToast('Entry removed');
+  render();
+}
+
+function claimBonus() {
+  const ws = mondayOf(CT.dateStr);
+  const w  = getWeekly(ws);
+  if (w.bonusAwarded || !weeklyBoostDone(w)) return;
+  w.bonusAwarded = true;
+  addXP(XP.weekBonus, '🏆 Weekly complete!');
+  saveWeekly(ws, w);
+  render();
+}
+
+/* ════════════════════════════════════════════
+   MONTHLY ACTIONS
+════════════════════════════════════════════ */
+function logLucy() {
+  const m = getMonthly(CT.monthStr);
+  if (m.lucy) return;
+  m.lucy = { date: CT.dateStr, loggedAt: Date.now() };
+  addXP(XP.lucy, '🐾 Lucy check-in!');
+  saveMonthly(CT.monthStr, m);
+  render();
+}
+
+/* ════════════════════════════════════════════
+   SETTINGS MODAL
+════════════════════════════════════════════ */
+let resetConfirm = false;
+let exportCache  = '';
+
+function openSettings() {
+  resetConfirm = false;
+  renderSettings();
+}
+
+function renderSettings() {
+  const tasks = Object.keys(META);
+  const tLabels = { walkies:'🥾', stream:'📺', cook:'🍳', clean:'🧹' };
+  const mc = document.getElementById('modal');
+  mc.innerHTML = `
+  <div class="overlay" id="ov">
+    <div class="modal">
+      <div class="modal-title">⚙️ Settings</div>
+
+      <div class="sec-label">Weekly Schedule</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Toggle expected tasks for each day — drives your daily chips</p>
+
+      <div class="sched-grid" style="margin-bottom:4px;">
+        <div></div>
+        ${tasks.map(t=>`<div class="sched-head">${tLabels[t]}</div>`).join('')}
+      </div>
+      ${DAYS.map((day, i) => `
+      <div class="sched-grid">
+        <div class="sched-day">${DSHORT[i]}</div>
+        ${tasks.map(t=>`
+        <input type="checkbox" class="sched-check"
+          ${(SCHED[day]?.[t]) ? 'checked' : ''}
+          onchange="updateSched('${day}','${t}',this.checked)">`).join('')}
+      </div>`).join('')}
+
+      <div class="divider"></div>
+      <div class="sec-label">XP Reference</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;font-size:12px;color:var(--muted);margin-bottom:4px;">
+        ${[['💤 Sleep 6h',XP.sleep6],['💤 Sleep 7h+',XP.sleep7],
+           ['👟 Steps 5k',XP.steps5k],['👟 Steps 7k',XP.steps7k],
+           ['🥗 Calories',XP.calories],['⏰ On time',XP.ontime],
+           ['⭐ Early bird',XP.earlyBird],['🥾 Walkie',XP.walkie],
+           ['📺 Stream',XP.stream],['🍳 Cook',XP.cook],
+           ['🧹 Clean',XP.clean],['🐾 Lucy',XP.lucy],
+           ['🏆 Week bonus',XP.weekBonus,'']
+          ].map(([l,x])=>`<div><b style="color:var(--gold)">+${x}</b> ${l}</div>`).join('')}
+      </div>
+
+      <div class="divider"></div>
+      <div class="sec-label">☁️ GitHub Sync</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5;">Saves your data as a JSON file in a GitHub repo so it persists across devices when you host this on GitHub Pages.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:10px;">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:3px;">Personal Access Token</div>
+          <input type="password" placeholder="ghp_xxxxxxxxxxxx" value="${GH.token()}"
+            style="width:100%;padding:7px 10px;background:var(--s2);border:1.5px solid var(--bdr);border-radius:10px;font-size:13px;color:var(--ink);outline:none;box-sizing:border-box;"
+            oninput="localStorage.setItem('ax_gh_token',this.value)">
+          <div style="font-size:11px;color:var(--muted);margin-top:2px;">Needs <b>Contents: Read &amp; Write</b> — generate at github.com/settings/tokens (fine-grained PAT)</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:3px;">Repository (owner/repo)</div>
+          <input type="text" placeholder="yourname/fitness-data" value="${GH.repo()}"
+            style="width:100%;padding:7px 10px;background:var(--s2);border:1.5px solid var(--bdr);border-radius:10px;font-size:13px;color:var(--ink);outline:none;box-sizing:border-box;"
+            oninput="localStorage.setItem('ax_gh_repo',this.value)">
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:3px;">File path in repo</div>
+          <input type="text" placeholder="data/alex-fitness.json" value="${GH.path()}"
+            style="width:100%;padding:7px 10px;background:var(--s2);border:1.5px solid var(--bdr);border-radius:10px;font-size:13px;color:var(--ink);outline:none;box-sizing:border-box;"
+            oninput="localStorage.setItem('ax_gh_path',this.value)">
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+        <button class="btn btn-ac btn-sm" onclick="syncToGH().then(()=>renderSettings())">☁️ Sync Now</button>
+        <button class="btn btn-ghost btn-sm" onclick="loadFromGH().then(ok=>{if(ok){SCHED=S.get('ax_sched')||DEFAULT_SCHED;render();showToast('Loaded from GitHub ☁️');}else{showToast('Nothing to load — check config');}renderSettings()})">⬇️ Pull from GitHub</button>
+      </div>
+      ${syncStatus==='ok'    ? '<div style="font-size:12px;color:var(--ok);">✓ Last sync successful</div>' : ''}
+      ${syncStatus==='error' ? '<div style="font-size:12px;color:var(--ac2);">⚠️ Sync failed — check token &amp; repo name</div>' : ''}
+
+      <div class="divider"></div>
+      <div class="sec-label">Data</div>
+      <div class="data-btns">
+        <button class="btn btn-ghost btn-sm" onclick="doExport()">⬇️ Export JSON</button>
+        <label class="btn btn-ghost btn-sm" style="cursor:pointer;">
+          ⬆️ Import JSON
+          <input type="file" accept=".json" style="display:none" onchange="doImport(event)">
+        </label>
+        ${resetConfirm
+          ? `<span style="font-size:13px;color:var(--muted);">Are you sure?</span>
+             <button class="btn btn-sm" style="background:#DC2626;color:#fff;" onclick="doReset()">Yes, reset all</button>
+             <button class="btn btn-ghost btn-sm" onclick="resetConfirm=false;renderSettings()">Cancel</button>`
+          : `<button class="btn btn-ghost btn-sm" style="color:var(--ac2);" onclick="resetConfirm=true;renderSettings()">🗑️ Reset XP</button>`}
+      </div>
+      ${exportCache ? `
+        <textarea class="export-area" readonly>${exportCache}</textarea>
+        <button class="btn btn-ghost btn-sm" style="margin-top:6px;width:100%;" onclick="copyExport()">📋 Copy to clipboard</button>
+      ` : ''}
+
+      <div style="height:16px;"></div>
+      <button class="btn btn-ac" style="width:100%;" onclick="closeModal()">Done</button>
+    </div>
+  </div>`;
+
+  document.getElementById('ov').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeModal();
+  });
+}
+
+function updateSched(day, task, val) {
+  if (!SCHED[day]) SCHED[day] = {};
+  SCHED[day][task] = val;
+  S.set('ax_sched', SCHED);
+  render();
+}
+
+function doExport() {
+  const data = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith('ax_')) {
+      try { data[k] = JSON.parse(localStorage.getItem(k)); } catch {}
+    }
+  }
+  exportCache = JSON.stringify(data, null, 2);
+  renderSettings();
+}
+
+function copyExport() {
+  if (!exportCache) return;
+  navigator.clipboard.writeText(exportCache)
+    .then(() => showToast('Copied to clipboard!'))
+    .catch(() => showToast('Select the text above and copy manually'));
+}
+
+function doImport(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = evt => {
+    try {
+      const data = JSON.parse(evt.target.result);
+      Object.entries(data).forEach(([k,v]) => {
+        if (k.startsWith('ax_')) S.set(k, v);
+      });
+      SCHED = S.get('ax_sched') || DEFAULT_SCHED;
+      THEME = S.get('ax_theme') || 'auto';
+      applyTheme();
+      closeModal();
+      render();
+      showToast('Data imported! 🎉');
+    } catch { showToast('Import failed — invalid file'); }
+  };
+  reader.readAsText(file);
+}
+
+function doReset() {
+  for (let i = localStorage.length - 1; i >= 0; i--) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith('ax_') && k !== 'ax_sched' && k !== 'ax_theme') {
+      localStorage.removeItem(k);
+    }
+  }
+  resetConfirm = false;
+  closeModal();
+  render();
+  showToast('XP and logs cleared');
+}
+
+function closeModal() {
+  document.getElementById('modal').innerHTML = '';
+  exportCache = '';
+}
+
+/* ════════════════════════════════════════════
+   CLOCK TICK
+════════════════════════════════════════════ */
+function tickClock() {
+  const now = nowCT();
+  const el  = document.getElementById('ct');
+  if (el) el.textContent = fmt12(now.hour, now.minute);
+  // Midnight re-render
+  if (now.dateStr !== CT.dateStr) { CT = now; render(); }
+}
+
+/* ════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════ */
+document.getElementById('fab').addEventListener('click', openSettings);
+applyTheme();
+render();
+updateSyncDot();
+if (GH.configured()) {
+  loadFromGH().then(ok => {
+    if (ok) { SCHED = S.get('ax_sched') || DEFAULT_SCHED; render(); updateSyncDot(); showToast('Loaded from GitHub ☁️'); }
+  });
+}
+setInterval(tickClock, 5000);
+</script>
+
+</body></html>
